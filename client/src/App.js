@@ -1,23 +1,24 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './components/Home/Home'
+import Home from './components/Home'
+import Create from './components/CRUD/Create'
+import Show from './components/CRUD/Show'
+// import Navbar from './components/Navbar'
 import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+  BrowserRouter as Router,
+  Route, 
+  Routes} from 'react-router-dom'
 
-
-
-const App = () => {
+function App() {
   return (
-      <div>
-        <Routes>
-          <Navbar />
-          <Route path='/' element={<Home />}/>
-        </Routes>
-      </div>
+
+    <Router>
+      {/* <Navbar /> */}
+      <Routes>
+        <Route exact path='/' element={<Home />}/>
+        <Route  path='/create' element={<Create />}/>
+        <Route path='/listing' element={<Show />} />
+      </Routes>
+    </Router>
   )
 }
 
